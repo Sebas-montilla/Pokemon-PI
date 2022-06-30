@@ -1,0 +1,28 @@
+nav{
+    background-color: #FFF7ED;
+    padding: 7px 0;
+    margin: 0;
+    z-index: 500;
+}
+
+.navUl {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+
+    padding: 5px 0;
+    margin: 0;
+    
+}
+.homeLink {
+    text-decoration: none;
+    color: black;
+    font-family: 'Pokemon';
+    font-weight: 900;
+    font-size: 20px;
+}
+.homeLink:hover {
+    color: #D87418;
+} 

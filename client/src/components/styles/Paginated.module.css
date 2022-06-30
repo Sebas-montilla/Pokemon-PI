@@ -1,0 +1,34 @@
+.ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+}
+
+.numberBtn {
+  margin-left: 25px;
+  background-color: #fff7ed;
+  font-family: "Pokemon";
+  font-size: large;
+  color: #d87418;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  box-shadow: 5px 3px 3px #ae5a0b;
+}
+.btn {
+  color: #fff7ed;
+  margin-left: 25px;
+  background-color: #b2886b;
+  font-family: "Pokemon";
+  font-size: medium;
+  border: none;
+  border-radius: 5px;
+  box-shadow:  4px 2px 2px #402E32;
+}
+.btn:hover {
+  background: #402e32;
+  color: #d87418;
+  transform: scale(1.1);
+}
