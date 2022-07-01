@@ -51,23 +51,23 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         pokemons: typeFiltered,
       };
-    case "GET_POKEMON_BY_ID": {
+    case "GET_POKEMON_BY_ID":
       return {
         ...state,
         detail: action.payload,
       };
-    }
-    case "GET_POKEMON_BY_NAME": 
+
+    case "GET_POKEMON_BY_NAME":
       return {
         ...state,
-        pokemons: [action.payload]
+        pokemons: [action.payload],
       };
-    
-    case "POST_POKEMON": 
+
+    case "POST_POKEMON":
       return {
         ...state,
       };
-    
+
     case "GET_CLEAN":
       return {
         ...state,
@@ -128,6 +128,6 @@ export default function rootReducer(state = initialState, action) {
     }
 
     default:
-      return state;
+      return { ...state };
   }
 }

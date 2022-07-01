@@ -30,7 +30,7 @@ export default function Home() {
   console.log(allTypes);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [pokemonsPerPage, setPokemonPerPage] = useState(1);
+  const [pokemonsPerPage, setPokemonPerPage] = useState(5);
   const indexOfLastPokemon = currentPage * pokemonsPerPage;
   const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
   const currentPokemons = allPokemons.slice(
@@ -43,6 +43,13 @@ export default function Home() {
     setCurrentPage(pageNumber);
   };
 
+  //Refresh and give me all pokemons
+  // const handleClick = (e) => {
+  //   e.preventDefault();
+  //   dispatch(getPokemons());
+  //   setCurrentPage(1);
+  //   setOrder(e.target.value);
+  // }
   //Filter by Type----------------------------
   const handleSortType = (e) => {
     e.preventDefault();

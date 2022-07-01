@@ -19,7 +19,7 @@ const getById = async (id) => {
         img: dB.img
           ? dB.img
           : "https://media.giphy.com/media/DRfu7BT8ZK1uo/giphy.gif",
-        types: dB.types.map((type) => 
+        type: dB.types.map((type) => 
           type.name
         ),
       };
@@ -38,8 +38,8 @@ const getById = async (id) => {
         weight: pokemon.data.weight,
         height: pokemon.data.height,
         img: pokemon.data.sprites.other.home.front_default,
-        types: pokemon.data.types.map((type) => {
-            return type.type.name;
+        type: pokemon.data.types.map((t) => {
+            return t.type.name;
         })
     }
     // return pokemonApi;
