@@ -7,12 +7,13 @@ const getByQuery = async (name) => {
       where: { name },
       indlude: {
         model: Type,
-        attribute: ["name"],
+        attributes: ["name"],
         through: {
           attributes: [],
         },
       },
     });
+
     if (db) {
       return db;
     }

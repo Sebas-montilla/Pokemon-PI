@@ -7,7 +7,7 @@
 }
 
 .numberBtn {
-  margin-left: 25px;
+  margin-right: 25px;
   background-color: #fff7ed;
   font-family: "Pokemon";
   font-size: large;
@@ -19,7 +19,7 @@
 }
 .btn {
   color: #fff7ed;
-  margin-left: 25px;
+  margin-right: 25px;
   background-color: #b2886b;
   font-family: "Pokemon";
   font-size: medium;

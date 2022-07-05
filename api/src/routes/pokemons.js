@@ -7,12 +7,12 @@ const { getById } = require("./middlewares/getByID");
 const { getByQuery } = require("./middlewares/getByQuery");
 
 //Get all Pokemons and get by query name
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
   const { name } = req.query;
   getAll().then((data) => {
     if (name) {
       getByQuery(name).then((response) => {
-        if (response.name) {
+        if (response) {
           res.json(response);
         } else {
           res.status(404).send("Pokemon not found");
@@ -29,7 +29,7 @@ router.get("/", (req, res) => {
   //   );
   //   pokemonName.length
   //     ? res.status(200).send(pokemonName)
-  //     : res.status(400).send("MISSING BREED");
+  //     : res.status(400).send("MISSING POKEMON");
   // } else {
   //   res.status(200).send(allPokemon);
   // }

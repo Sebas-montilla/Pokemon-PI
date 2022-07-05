@@ -30,7 +30,7 @@ export default function Home() {
   console.log(allTypes);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [pokemonsPerPage, setPokemonPerPage] = useState(5);
+  const [pokemonsPerPage, setPokemonPerPage] = useState(3);
   const indexOfLastPokemon = currentPage * pokemonsPerPage;
   const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
   const currentPokemons = allPokemons.slice(
@@ -44,12 +44,12 @@ export default function Home() {
   };
 
   //Refresh and give me all pokemons
-  // const handleClick = (e) => {
-  //   e.preventDefault();
-  //   dispatch(getPokemons());
-  //   setCurrentPage(1);
-  //   setOrder(e.target.value);
-  // }
+  const handleClick = (e) => {
+    e.preventDefault();
+    dispatch(getPokemons());
+    setCurrentPage(1);
+    setOrder(e.target.value);
+  }
   //Filter by Type----------------------------
   const handleSortType = (e) => {
     e.preventDefault();
@@ -86,8 +86,8 @@ export default function Home() {
 
       <section className={s.filters}>
         <div className={s.selects}>
-          <Link to="/pokemon/create">
-            <button className={s.orderAndFilter}>HOLAAA</button>
+          <Link to="/create">
+            <button className={s.orderAndFilter}>Create new Pokemon</button>
           </Link>
 
           <select
@@ -134,6 +134,10 @@ export default function Home() {
               ))}
           </select>
         </div>
+      </section>
+      
+      <section>
+        <button className={s.btnRefresh} onClick={(e) => handleClick(e)}>Get all pokemons</button>
       </section>
       <section className={s.paginated}>
         <Paginated

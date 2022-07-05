@@ -1,6 +1,6 @@
 .home {
   height: 100vh;
-  width: 100%; 
+  width: 100%;
   background-image: url("./resources/homeBlur.png");
   background-position: center;
   overflow: auto;
@@ -23,7 +23,7 @@ nav {
 .orderAndFilter {
   font-family: "Pokemon";
   color: #fff7ed;
-  border: 1px solid #402e32;
+  border: 2px solid #402e32;
   border-radius: 10px;
   background-color: #b2886b;
   cursor: pointer;
@@ -53,4 +53,19 @@ nav {
 }
 a {
   text-decoration: none;
+}
+.btnRefresh {
+  background-color: #d87418;
+  color: #fff7f1;
+  cursor: pointer;
+  border: none;
+  padding: 10px;
+  border-radius: 50px;
+  font-family: "Pokemon";
+  box-shadow: 5px 3px 1px #402e32;
+}
+.btnRefresh:hover {
+  background: #402e32;
+  color: #fff7f1;
+  box-shadow: 3px 2px 5px #775b47;
 }
