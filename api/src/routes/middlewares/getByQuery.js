@@ -3,7 +3,7 @@ const { Pokemon, Type } = require("../../db.js");
 
 const getByQuery = async (name) => {
   try {
-    const db = await Pokemon.findOne({
+    const dB = await Pokemon.findOne({
       where: { name },
       indlude: {
         model: Type,
@@ -13,10 +13,27 @@ const getByQuery = async (name) => {
         },
       },
     });
+    //  const obj = {
+    //   id: dB.id,
+    //     name: dB.name,
+    //     hp: dB.hp,
+    //     attack: dB.attack,
+    //     defense: dB.defense,
+    //     speed: dB.speed,
+    //     height: dB.height,
+    //     weight: dB.weight,
+    //     //if the image exist get it from db, otherwise send the other image
+    //     img: dB.img
+    //       ? dB.img
+    //       : "https://media.giphy.com/media/DRfu7BT8ZK1uo/giphy.gif",
+    //     type: dB.types.map((type) => 
+    //       type.name
+    //     ),
+    // }
 
-    if (db) {
-      return db;
-    }
+    if (obj) {
+      return obj;
+    } 
 
     const pokemon = await axios.get(
       `https://pokeapi.co/api/v2/pokemon/${name}`
@@ -36,7 +53,8 @@ const getByQuery = async (name) => {
       }),
     };
   } catch (e) {
-    throw new Error("Ups, server error");
+    // throw new Error("Ups, server error");
+    console.log('Ups, server error');
   }
 };
 

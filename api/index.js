@@ -22,7 +22,7 @@ const { conn } = require("./src/db.js");
 // const axios = require("axios");
 // const { getAll } = require("./src/routes/middlewares/getAllPokemons.js");
 // Syncing all the models at once.
-conn.sync({ force: true }).then(() => {
+conn.sync({ force: false }).then(() => {
   server.listen(3001, () => {
     //   getAll().then((data) => {
     //     res.send(data)

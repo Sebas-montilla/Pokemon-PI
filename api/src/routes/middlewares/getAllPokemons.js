@@ -48,7 +48,7 @@ const DbCall = async () => {
         }
       },
     });
-    const pokeInfo = pokemons.map((obj) => {
+    const pokeInfo = await pokemons.map((obj) => {
         return {
             id: obj.id,
             name: obj.name,
