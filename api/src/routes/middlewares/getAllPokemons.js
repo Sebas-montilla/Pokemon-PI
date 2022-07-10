@@ -5,7 +5,7 @@ const { Pokemon, Type } = require("../../db.js");
 const getApiData = async () => {
   // FirstCall gets the first 20 pokemons
   const firstCall = await axios.get(
-    "https://pokeapi.co/api/v2/pokemon?limit=20&offset=0"
+    "https://pokeapi.co/api/v2/pokemon?limit=5&offset=0"
     // ?limit=40&offset=0
   );
   // SecondCall gets the second 20 pokemons
