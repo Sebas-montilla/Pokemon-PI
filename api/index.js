@@ -23,7 +23,7 @@ const { conn } = require("./src/db.js");
 // const { getAll } = require("./src/routes/middlewares/getAllPokemons.js");
 // Syncing all the models at once.
 conn.sync({ force: false }).then(() => {
-  server.listen(3001, () => {
+  server.listen(process.env.PORT, () => {
     //   getAll().then((data) => {
     //     res.send(data)
     //   })
