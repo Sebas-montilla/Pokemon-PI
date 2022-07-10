@@ -18,6 +18,11 @@
   /* opacity: 90%; */
   /* color: #d87418; */
 /* } */
+.card:hover { 
+  background-color: #402e32;
+
+  color: #d87418;
+}
 .name {
   font-size: 20px;
 }
