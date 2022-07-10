@@ -152,12 +152,12 @@ export default function PokemonCreate() {
       speed < 10 ||
       height < 10 ||
       weight < 10 ||
-      hp > 100 ||
-      attack > 100 ||
-      defense > 100 ||
-      speed > 100 ||
-      height > 100 ||
-      weight > 100
+      hp > 200 ||
+      attack > 200 ||
+      defense > 200 ||
+      speed > 200 ||
+      height > 200 ||
+      weight > 200
     ) {
       alert("ONLY STATS BETWEEN 10 AND 200");
     } else if (

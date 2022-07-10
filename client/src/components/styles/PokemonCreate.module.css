@@ -95,7 +95,7 @@ label {
   box-shadow: 3px 2px 2px #402e32;
 }
 .btnType:hover {
-  opacity: 87%;
+  background-color: #d4a380;
 }
 .danger {
   background-color: #402e32a5;
