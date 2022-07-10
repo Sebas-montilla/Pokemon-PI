@@ -60,7 +60,7 @@ export default function rootReducer(state = initialState, action) {
     case "GET_POKEMON_BY_NAME":
       return {
         ...state,
-        pokemons: [action.payload],
+        pokemons: action.payload,
       };
 
     case "POST_POKEMON":
@@ -73,6 +73,12 @@ export default function rootReducer(state = initialState, action) {
         ...state,
         detail: action.payload,
       };
+
+    case "DELETE": 
+      return {
+        ...state
+      }
+
     //!!!!!! FILTERS !!!!!!
     //By Type
 

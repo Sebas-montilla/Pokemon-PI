@@ -1,7 +1,8 @@
 .card {
   background-color: #fff7edd8;
-  min-height: 250px;
+  min-height: 305px;
   min-width: 250px;
+  max-width: 305px;
   padding: 10px;
   border-radius: 20px;
   font-family: "Pokemon";
@@ -22,7 +23,9 @@
 }
 .img {
   max-width: 200px;
-  max-height: 150px;
+  max-height: 150px;   
+  min-height: 150px;
+  border-radius:10px;
 }
 .types {
   display: flex;

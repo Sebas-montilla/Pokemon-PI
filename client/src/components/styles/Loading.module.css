@@ -1,10 +1,6 @@
-.img {
-    /* background-image: url('./resources/pikachu-running.gif');
-    background-position: center; */
-    /* color: red;
-    height: 50px;
-    z-index: 500; */
-}
-.text {
-    font-family: "Pokemon";
+.loading {
+  font-family: "Pokemon";
+  color: #402e32;
+  font-weight: 900;
+  font-size: 22px;
 }

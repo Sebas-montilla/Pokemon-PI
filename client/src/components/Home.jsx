@@ -30,7 +30,7 @@ export default function Home() {
   console.log(allTypes);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [pokemonsPerPage, setPokemonPerPage] = useState(3);
+  const [pokemonsPerPage, setPokemonPerPage] = useState(12);
   const indexOfLastPokemon = currentPage * pokemonsPerPage;
   const indexOfFirstPokemon = indexOfLastPokemon - pokemonsPerPage;
   const currentPokemons = allPokemons.slice(
@@ -49,7 +49,7 @@ export default function Home() {
     dispatch(getPokemons());
     setCurrentPage(1);
     setOrder(e.target.value);
-  }
+  };
   //Filter by Type----------------------------
   const handleSortType = (e) => {
     e.preventDefault();
@@ -135,9 +135,11 @@ export default function Home() {
           </select>
         </div>
       </section>
-      
+
       <section>
-        <button className={s.btnRefresh} onClick={(e) => handleClick(e)}>Get all pokemons</button>
+        <button className={s.btnRefresh} onClick={(e) => handleClick(e)}>
+          Get all pokemons
+        </button>
       </section>
       <section className={s.paginated}>
         <Paginated
@@ -151,30 +153,35 @@ export default function Home() {
       <div className={s.card}>
         {currentPokemons.length > 0 ? (
           currentPokemons.map((pokemon) => (
-            <Link key={pokemon.id} to={`/pokemons/${pokemon.id}`}>
-              <Card
-                key={pokemon.name}
-                name={pokemon.name}
-                img={
-                  pokemon.img
-                    ? pokemon.img
-                    : "https://cdn.vox-cdn.com/thumbor/IhuPwFLVg19jF8B6rSmpy5T1-tY=/0x0:1920x1080/1400x788/filters:focal(807x387:1113x693):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/53254027/who_pokemon.0.jpg"
-                }
-                type={pokemon.type}
-                // attack={pokemon.attack}
-              />
-            </Link>
+            <>
+              <Link key={pokemon.id} to={`/pokemons/${pokemon.id}`}>
+                <Card
+                  key={pokemon.name}
+                  name={pokemon.name}
+                  img={
+                    pokemon.img
+                      ? pokemon.img
+                      : "https://cdn.vox-cdn.com/thumbor/IhuPwFLVg19jF8B6rSmpy5T1-tY=/0x0:1920x1080/1400x788/filters:focal(807x387:1113x693):format(jpeg)/cdn.vox-cdn.com/uploads/chorus_image/image/53254027/who_pokemon.0.jpg"
+                  }
+                  type={pokemon.type}
+                  // attack={pokemon.attack}
+                />
+              </Link>
+            </>
           ))
         ) : (
-          <div className={s.div}>
-            <p className={s.loading}>Loading...</p>
-            <img
-              className={s.pikachuR}
-              src={"https://c.tenor.com/fSsxftCb8w0AAAAi/pikachu-running.gif"}
-            />
-          </div>
+          <>
+            <Loading />
+          </>              
         )}
       </div>
+      {!currentPokemons.length ? (
+        <div className={s.noti}>
+          <h1 className={s.msg}>No pokemons available</h1>
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 }

@@ -1,0 +1,25 @@
+.container {
+  font-family: "Pokemon";
+  font-size: small; 
+  /* height: 100vh;
+  width: 100%; */
+  /* overflow: auto; */
+}
+.btn {
+  margin-bottom: 25px;
+  top: 30px;
+  left: 43%;
+  background-color: #fff7f1;
+  color: #402e32;
+  cursor: pointer;
+  border: none;
+  padding: 10px;
+  border-radius: 50px;
+  font-family: "Pokemon";
+  box-shadow: 5px 3px 1px #402e32;
+}
+.btn:hover {
+  background: #402e32;
+  color: #fff7f1;
+  box-shadow: 3px 2px 5px #775b47;
+}

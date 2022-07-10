@@ -4,28 +4,29 @@
   background-image: url("./resources/homeBlur.png");
   background-position: center;
   overflow: auto;
-  font-family: 'Pokemon';
+  font-family: "Pokemon";
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
-.btnHome{
-  position: absolute;
+.btnHome {
+  /* position: absolute; */
+  margin-bottom: 25px;
   top: 30px;
   left: 43%;
-  background-color: #FFF7F1;
-  color: #402E32;
+  background-color: #fff7f1;
+  color: #402e32;
   cursor: pointer;
   border: none;
   padding: 10px;
   border-radius: 50px;
   font-family: "Pokemon";
-  box-shadow: 5px 3px 1px #402E32;
+  box-shadow: 5px 3px 1px #402e32;
 }
 .btnHome:hover {
   background: #402e32;
-  color: #FFF7F1;
+  color: #fff7f1;
   box-shadow: 3px 2px 5px #775b47;
 }
 .card {
@@ -33,18 +34,18 @@
   max-height: 700px;
   max-width: 600px;
   max-height: 850px;
-  background-color: #FFF7F1;
+  background-color: #fff7f1;
   padding: 15px;
   border-radius: 20px;
 }
 .pokeDetails {
   padding: 5px;
-  color: #402E32;
+  color: #402e32;
 }
-.pokemonTipos{
+.pokemonTipos {
   margin-top: 0px;
   margin-bottom: 1px;
-  color: #D87418;
+  color: #d87418;
   font-weight: 900;
 }
 .pokeImg {
@@ -55,5 +56,20 @@
   padding: 5px;
   font-weight: 900;
   font-size: large;
-  color: #D87418;
+  color: #d87418;
+}
+.delete {
+  background-color: #d87418;
+  color: #fff7f1;
+  cursor: pointer;
+  border: none;
+  padding: 10px;
+  border-radius: 50px;
+  font-family: "Pokemon";
+  box-shadow: 5px 3px 1px #402e32;
+}
+.delete:hover {
+  background: #402e32;
+  color: #fff7f1;
+  box-shadow: 3px 2px 5px #775b47;
 }

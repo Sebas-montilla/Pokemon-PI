@@ -14,7 +14,7 @@ import axios from "axios";
 //Get all the pokemons
 export function getPokemons() {
   return function (dispatch) {
-    axios.get("http://localhost:3001/pokemons").then((pokemons) =>
+    axios.get("/pokemons").then((pokemons) =>
       dispatch({
         type: "GET_POKEMONS",
         payload: pokemons.data,
@@ -25,7 +25,7 @@ export function getPokemons() {
 //Post the types to the DB
 export function setTypes() {
   return function (dispatch) {
-    axios.post("http://localhost:3001/types").then((types) =>
+    axios.post("/types").then((types) =>
       dispatch({
         type: "SET_TYPES",
         payload: types.data,
@@ -36,7 +36,7 @@ export function setTypes() {
 //Get the types from DB
 export function getTypes() {
   return function (dispatch) {
-    axios.get("http://localhost:3001/types").then((types) =>
+    axios.get("types").then((types) =>
       dispatch({
         type: "GET_TYPES",
         payload: types.data,
@@ -48,7 +48,7 @@ export function getTypes() {
 export function postPokemon(payload) {
   return async function () {
     try {
-      await axios.post("http://localhost:3001/pokemons", {
+      await axios.post("/pokemons", {
         ...payload,
       });
       alert("Successfully Created");
@@ -60,7 +60,9 @@ export function postPokemon(payload) {
 // Get Pokemon by Name
 export function getPokemonByName(search) {
   return (dispatch) => {
-    axios.get(`http://localhost:3001/pokemons?name=` + search).then((pokemons) =>
+    axios
+      .get(`/pokemons?name=` + search)
+      .then((pokemons) =>
         dispatch({
           type: "GET_POKEMON_BY_NAME",
           payload: pokemons.data,
@@ -72,15 +74,29 @@ export function getPokemonByName(search) {
 // Get Pokemon by ID
 export function getPokemonByID(id) {
   return (dispatch) => {
-    axios.get(`http://localhost:3001/pokemons/${id}`).then((pokemon) =>
-      dispatch({
-        type: "GET_POKEMON_BY_ID",
-        payload: pokemon.data,
-      })
-    ).catch((err) => alert("The pokemon doesn't exist"))
+    axios
+      .get(`/pokemons/${id}`)
+      .then((pokemon) =>
+        dispatch({
+          type: "GET_POKEMON_BY_ID",
+          payload: pokemon.data,
+        })
+      )
+      .catch((err) => alert("The pokemon doesn't exist"));
   };
 }
 
+export function deletePokemon(id) {
+  return (dispatch) => {
+    try {
+      axios
+        .delete(`/pokemons/${id}`)
+        .then(() => dispatch({ type: "DELETE" }));
+    } catch (e) {
+      console.log(e)
+    }
+  };
+}
 //!!!!!! FILTERS !!!!!!!
 
 //Filter By Type
@@ -102,18 +118,18 @@ export function filterByAttack(payload) {
   return {
     type: "FILTER_BY_ATTACK",
     payload,
-  }
+  };
 }
 //Filter by created in DB
 export function filterCreated(payload) {
   return {
     type: "FILTER_CREATED",
     payload,
-  }
+  };
 }
 export function getClean() {
   return {
-    type: 'GET_CLEAN',
+    type: "GET_CLEAN",
     payload: [],
   };
 }
