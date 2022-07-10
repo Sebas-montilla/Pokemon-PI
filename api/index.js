@@ -19,14 +19,9 @@
 //     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const server = require("./src/app.js");
 const { conn } = require("./src/db.js");
-// const axios = require("axios");
-// const { getAll } = require("./src/routes/middlewares/getAllPokemons.js");
 // Syncing all the models at once.
 conn.sync({ force: false }).then(() => {
   server.listen(process.env.PORT, () => {
-    //   getAll().then((data) => {
-    //     res.send(data)
-    //   })
     console.log("Server listening at 3001"); // eslint-disable-line no-console
   });
 });
