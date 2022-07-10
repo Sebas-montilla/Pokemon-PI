@@ -15,7 +15,7 @@
 }
 .card:hover {
   background-color: #402e32;
-  opacity: 90%;
+  /* opacity: 90%; */
   color: #d87418;
 }
 .name {
